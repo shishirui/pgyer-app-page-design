@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Download Page - Minimal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased min-h-screen flex flex-col justify-center py-0 md:py-10">
+
+    <div class="w-full md:max-w-3xl mx-auto bg-white shadow-2xl overflow-hidden relative md:rounded-[2.5rem] min-h-screen md:min-h-0 flex flex-col">
+        
+        <!-- Header / Hero Section -->
+        <div class="relative text-white pt-16 pb-20 px-4 md:px-12 overflow-hidden bg-cover bg-center flex-shrink-0" style="background-image: url('app-icon.webp');">
+            
+            <!-- Blur Overlay -->
+            <div class="absolute inset-0 bg-black/30 backdrop-blur-[100px] backdrop-saturate-150"></div>
+
+            <div class="relative z-10 flex flex-col items-center text-center">
+                
+                <!-- App Icon -->
+                <div class="w-32 h-32 md:w-40 md:h-40 bg-white rounded-[2.5rem] shadow-2xl overflow-hidden border-4 border-white/20 mb-6 transform transition hover:scale-105 duration-300">
+                    <img src="app-icon.webp" alt="App Icon" class="w-full h-full object-cover">
+                </div>
+                
+                <h1 class="text-3xl md:text-5xl font-bold mb-3 tracking-tight">Super App Name</h1>
+                <p class="text-gray-100 text-base md:text-xl font-medium opacity-90 max-w-md mx-auto leading-relaxed">The best app for everything you need. Boost your productivity today.</p>
+                
+                <!-- Tags -->
+                <div class="flex flex-wrap justify-center gap-2 mt-6">
+                    <span class="bg-white/20 backdrop-blur-sm px-4 py-1.5 rounded-full text-xs md:text-sm font-semibold border border-white/10">Productivity</span>
+                    <span class="bg-white/20 backdrop-blur-sm px-4 py-1.5 rounded-full text-xs md:text-sm font-semibold border border-white/10">Tools</span>
+                    <span class="bg-green-400/90 text-green-900 px-4 py-1.5 rounded-full text-xs md:text-sm font-bold shadow-lg shadow-green-900/20">Official</span>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Main Content (Centered Single Column) -->
+        <div class="flex-grow px-6 py-10 md:px-12 md:py-12 flex flex-col items-center">
+            
+            <!-- Download Card -->
+            <div class="w-full max-w-lg bg-gray-50 rounded-3xl p-8 md:p-10 border border-gray-100 text-center mb-10 shadow-sm">
+                
+                <div class="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12 mb-8">
+                    <!-- Version Info -->
+                    <div class="text-center">
+                        <div class="text-xs text-gray-400 uppercase tracking-wider font-bold mb-1">Version</div>
+                        <div class="text-3xl font-bold text-gray-900">v2.4.0</div>
+                        <div class="text-xs text-gray-500 mt-1 font-mono bg-gray-200 px-2 py-0.5 rounded inline-block">Build 1024</div>
+                    </div>
+
+                    <!-- Divider (Desktop) -->
+                    <div class="hidden md:block w-px h-12 bg-gray-200"></div>
+
+                    <!-- Date Info -->
+                    <div class="text-center">
+                        <div class="text-xs text-gray-400 uppercase tracking-wider font-bold mb-1">Updated</div>
+                        <div class="text-3xl font-bold text-gray-900">Oct 27</div>
+                        <div class="text-xs text-gray-500 mt-1">2023</div>
+                    </div>
+                </div>
+
+                <a href="#" class="block w-full bg-black text-white hover:bg-gray-800 active:scale-95 font-bold text-lg py-4 px-6 rounded-2xl shadow-xl transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    Download App
+                </a>
+                
+                <p class="mt-4 text-xs text-gray-400">Requires iOS 14.0 or later</p>
+            </div>
+
+            <!-- Secondary Actions -->
+            <div class="flex flex-col md:flex-row gap-4 md:gap-8 text-sm font-medium text-gray-500">
+                <button onclick="openModal()" class="hover:text-black transition flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-gray-50">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
+                    Send Feedback
+                </button>
+                <button onclick="openReportModal()" class="hover:text-red-600 transition flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-red-50">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                    Report Abuse
+                </button>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="py-6 text-center border-t border-gray-50 bg-gray-50/50">
+            <p class="text-gray-400 text-xs">&copy; 2023 Super App Company. All rights reserved.</p>
+        </div>
+
+    </div>
+
+    <!-- Feedback Modal -->
+    <div id="reviewModal" class="fixed inset-0 z-50 hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity opacity-0" id="modalBackdrop"></div>
+        
+        <!-- Modal Panel -->
+        <div class="relative z-10 flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+            <div class="relative transform overflow-hidden rounded-2xl bg-white text-left shadow-xl transition-all w-full sm:my-8 sm:max-w-lg opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" id="modalPanel">
+                
+                <!-- Header -->
+                <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4 border-b border-gray-100">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-lg font-bold leading-6 text-gray-900" id="modal-title">Send Feedback</h3>
+                        <button type="button" onclick="closeModal()" class="text-gray-400 hover:text-gray-500">
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div class="bg-white px-4 py-4 sm:p-6">
+                    <div class="space-y-4">
+                        <!-- Feedback Type -->
+                        <div>
+                            <label for="type" class="block text-sm font-medium text-gray-700 mb-1">Feedback Type</label>
+                            <select id="type" class="w-full rounded-lg border-gray-300 border p-2.5 text-sm focus:border-black focus:ring-black outline-none transition bg-white">
+                                <option>Bug Report</option>
+                                <option>Feature Request</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                        <!-- Form -->
+                        <div>
+                            <label for="nickname" class="block text-sm font-medium text-gray-700 mb-1">Your Name (Optional)</label>
+                            <input type="text" id="nickname" class="w-full rounded-lg border-gray-300 border p-2.5 text-sm focus:border-black focus:ring-black outline-none transition" placeholder="John Doe">
+                        </div>
+                        
+                        <div>
+                            <label for="review" class="block text-sm font-medium text-gray-700 mb-1">Description</label>
+                            <textarea id="review" rows="4" class="w-full rounded-lg border-gray-300 border p-2.5 text-sm focus:border-black focus:ring-black outline-none transition" placeholder="Describe the issue or suggestion..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                    <button type="button" onclick="closeModal()" class="inline-flex w-full justify-center rounded-xl bg-black px-3 py-2.5 text-sm font-bold text-white shadow-sm hover:bg-gray-500 sm:ml-3 sm:w-auto transition">Submit Feedback</button>
+                    <button type="button" onclick="closeModal()" class="mt-3 inline-flex w-full justify-center rounded-xl bg-white px-3 py-2.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto transition">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Report Modal -->
+    <div id="reportModal" class="fixed inset-0 z-50 hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity opacity-0" id="reportModalBackdrop"></div>
+        
+        <!-- Modal Panel -->
+        <div class="relative z-10 flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+            <div class="relative transform overflow-hidden rounded-2xl bg-white text-left shadow-xl transition-all w-full sm:my-8 sm:max-w-lg opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" id="reportModalPanel">
+                
+                <!-- Header -->
+                <div class="bg-red-50 px-4 pb-4 pt-5 sm:p-6 sm:pb-4 border-b border-red-100">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-lg font-bold leading-6 text-red-900" id="modal-title">Report App</h3>
+                        <button type="button" onclick="closeReportModal()" class="text-red-400 hover:text-red-500">
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div class="bg-white px-4 py-4 sm:p-6">
+                    <div class="space-y-4">
+                        <p class="text-sm text-gray-500">Please describe why you are reporting this app. We take all reports seriously.</p>
+                        
+                        <!-- Reason -->
+                        <div>
+                            <label for="report-reason" class="block text-sm font-medium text-gray-700 mb-1">Reason</label>
+                            <select id="report-reason" class="w-full rounded-lg border-gray-300 border p-2.5 text-sm focus:border-red-500 focus:ring-red-500 outline-none transition bg-white">
+                                <option>Inappropriate Content</option>
+                                <option>Copyright Violation</option>
+                                <option>Malware / Virus</option>
+                                <option>Scam / Fraud</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                        <!-- Description -->
+                        <div>
+                            <label for="report-desc" class="block text-sm font-medium text-gray-700 mb-1">Details</label>
+                            <textarea id="report-desc" rows="4" class="w-full rounded-lg border-gray-300 border p-2.5 text-sm focus:border-red-500 focus:ring-red-500 outline-none transition" placeholder="Please provide more details..."></textarea>
+                        </div>
+                        
+                        <!-- Contact (Optional) -->
+                        <div>
+                            <label for="report-email" class="block text-sm font-medium text-gray-700 mb-1">Email (Optional)</label>
+                            <input type="email" id="report-email" class="w-full rounded-lg border-gray-300 border p-2.5 text-sm focus:border-red-500 focus:ring-red-500 outline-none transition" placeholder="For follow up">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                    <button type="button" onclick="closeReportModal()" class="inline-flex w-full justify-center rounded-xl bg-red-600 px-3 py-2.5 text-sm font-bold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto transition">Submit Report</button>
+                    <button type="button" onclick="closeReportModal()" class="mt-3 inline-flex w-full justify-center rounded-xl bg-white px-3 py-2.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto transition">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Feedback Modal Logic
+        const modal = document.getElementById('reviewModal');
+        const backdrop = document.getElementById('modalBackdrop');
+        const panel = document.getElementById('modalPanel');
+
+        function openModal() {
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                backdrop.classList.remove('opacity-0');
+                panel.classList.remove('opacity-0', 'translate-y-4', 'sm:translate-y-0', 'sm:scale-95');
+            }, 10);
+        }
+
+        function closeModal() {
+            backdrop.classList.add('opacity-0');
+            panel.classList.add('opacity-0', 'translate-y-4', 'sm:translate-y-0', 'sm:scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+        backdrop.addEventListener('click', closeModal);
+
+        // Report Modal Logic
+        const reportModal = document.getElementById('reportModal');
+        const reportBackdrop = document.getElementById('reportModalBackdrop');
+        const reportPanel = document.getElementById('reportModalPanel');
+
+        function openReportModal() {
+            reportModal.classList.remove('hidden');
+            setTimeout(() => {
+                reportBackdrop.classList.remove('opacity-0');
+                reportPanel.classList.remove('opacity-0', 'translate-y-4', 'sm:translate-y-0', 'sm:scale-95');
+            }, 10);
+        }
+
+        function closeReportModal() {
+            reportBackdrop.classList.add('opacity-0');
+            reportPanel.classList.add('opacity-0', 'translate-y-4', 'sm:translate-y-0', 'sm:scale-95');
+            setTimeout(() => {
+                reportModal.classList.add('hidden');
+            }, 300);
+        }
+        reportBackdrop.addEventListener('click', closeReportModal);
+
+        // Close on Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                if (!modal.classList.contains('hidden')) {
+                    closeModal();
+                }
+                if (!reportModal.classList.contains('hidden')) {
+                    closeReportModal();
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Download Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom scrollbar for screenshots */
+        .hide-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scroll {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased min-h-screen flex flex-col justify-center py-0 md:py-10">
+
+    <div class="w-full md:max-w-5xl mx-auto bg-white shadow-2xl overflow-hidden relative md:rounded-[2.5rem] min-h-screen md:min-h-0">
+        
+        <!-- Header / Hero Section -->
+        <div class="bg-gradient-to-br from-blue-600 to-indigo-700 text-white pt-12 pb-16 px-4 md:px-12 relative">
+            <!-- Decorative circles -->
+            <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-white/10 blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 -ml-10 -mb-10 w-40 h-40 rounded-full bg-blue-400/20 blur-2xl"></div>
+
+            <div class="flex flex-col md:flex-row items-center md:items-center justify-between z-10 relative gap-8">
+                
+                <!-- App Info -->
+                <div class="flex flex-col md:flex-row items-center text-center md:text-left gap-6">
+                    <!-- App Icon -->
+                    <div class="w-28 h-28 md:w-36 md:h-36 bg-white rounded-[2.5rem] shadow-xl overflow-hidden border-2 border-white flex-shrink-0 transform transition hover:scale-105 duration-300">
+                        <img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ff/2a/42/ff2a420b-c7ea-d83f-e2c4-3e8049273211/Placeholder.mill/400x400bb-75.webp" alt="App Icon" class="w-full h-full object-cover">
+                    </div>
+                    
+                    <div>
+                        <h1 class="text-3xl md:text-4xl font-bold mb-2 tracking-tight">Super App Name</h1>
+                        <p class="text-blue-100 text-sm md:text-lg mb-4 font-medium opacity-90 max-w-xs md:max-w-md">The best app for everything you need. Boost your productivity today.</p>
+                        
+                        <!-- Tags/Badges (Desktop) -->
+                        <div class="hidden md:flex flex-wrap gap-2">
+                            <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-lg text-xs font-semibold">Productivity</span>
+                            <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-lg text-xs font-semibold">Tools</span>
+                            <span class="bg-green-400/90 text-green-900 px-3 py-1 rounded-lg text-xs font-bold">Official</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Desktop QR & Action -->
+                <div class="hidden md:flex flex-col items-center gap-3 bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20">
+                    <div class="bg-white p-2 rounded-xl">
+                        <img src="https://placehold.co/120x120/png?text=QR+Code" alt="QR Code" class="w-24 h-24 rounded-lg">
+                    </div>
+                    <div class="text-xs font-medium opacity-90">Scan to Download</div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Mobile Download Card (Floating overlap) -->
+        <div class="relative z-20 -mt-8 px-4 md:hidden">
+             <div class="bg-white p-4 rounded-2xl shadow-lg border border-gray-100">
+                <div class="flex justify-between items-center mb-4">
+                    <div>
+                        <div class="flex items-baseline gap-1">
+                            <span class="font-bold text-lg">v2.4.0</span>
+                            <span class="text-xs text-gray-500 bg-gray-100 px-1.5 py-0.5 rounded">build 1024</span>
+                        </div>
+                        <div class="text-xs text-gray-400 mt-1">2023-10-27</div>
+                    </div>
+                    <div class="bg-green-50 text-green-600 px-2 py-1 rounded text-xs font-bold">Latest</div>
+                </div>
+                <a href="#" class="block w-full bg-blue-600 text-white hover:bg-blue-700 active:scale-95 font-bold py-3 px-6 rounded-xl shadow-md transition-all flex items-center justify-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    Download App
+                </a>
+             </div>
+        </div>
+
+        <!-- Main Content Grid -->
+        <div class="px-4 pb-12 pt-8 md:px-12 md:py-12 md:grid md:grid-cols-12 md:gap-12">
+            
+            <!-- Left Column (Main Info) -->
+            <div class="md:col-span-8 space-y-10">
+                
+                <!-- Screenshots -->
+                <section>
+                    <h2 class="text-xl font-bold text-gray-900 mb-5 flex items-center gap-2">
+                        <span class="w-1 h-6 bg-blue-600 rounded-full"></span>
+                        Preview
+                    </h2>
+                    <!-- Scroll container that works on both but looks better on desktop -->
+                    <div class="flex overflow-x-auto gap-4 pb-6 hide-scroll snap-x -mx-4 px-4 md:mx-0 md:px-0">
+                        <img src="screenshot_1.webp" class="w-40 md:w-60 h-auto rounded-xl shadow-md snap-center flex-shrink-0 border border-gray-100 transition hover:-translate-y-1 duration-300">
+                        <img src="screenshot_2.webp" class="w-40 md:w-60 h-auto rounded-xl shadow-md snap-center flex-shrink-0 border border-gray-100 transition hover:-translate-y-1 duration-300">
+                        <img src="screenshot_3.webp" class="w-40 md:w-60 h-auto rounded-xl shadow-md snap-center flex-shrink-0 border border-gray-100 transition hover:-translate-y-1 duration-300">
+                        <img src="screenshot_4.webp" class="w-40 md:w-60 h-auto rounded-xl shadow-md snap-center flex-shrink-0 border border-gray-100 transition hover:-translate-y-1 duration-300">
+                        <img src="screenshot_5.webp" class="w-40 md:w-60 h-auto rounded-xl shadow-md snap-center flex-shrink-0 border border-gray-100 transition hover:-translate-y-1 duration-300">
+                        <img src="screenshot_6.webp" class="w-40 md:w-60 h-auto rounded-xl shadow-md snap-center flex-shrink-0 border border-gray-100 transition hover:-translate-y-1 duration-300">
+                    </div>
+                </section>
+
+                <!-- Description -->
+                <section>
+                    <h2 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                        <span class="w-1 h-6 bg-blue-600 rounded-full"></span>
+                        About this App
+                    </h2>
+                    <div class="text-gray-600 leading-relaxed space-y-4 text-base">
+                        <p>
+                            Super App is the ultimate tool for managing your daily tasks and boosting productivity. With an intuitive interface and powerful features, you can organize your life like never before.
+                        </p>
+                        <p>
+                            Sync across all your devices and never miss a deadline again. Whether you are a student, professional, or just looking to get organized, Super App has something for everyone. Experience the future of productivity today.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- What's New -->
+                <section class="bg-blue-50 rounded-2xl p-6 border border-blue-100">
+                    <h2 class="text-lg font-bold text-blue-900 mb-4 flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        What's New in v2.4.0
+                    </h2>
+                    <div class="text-blue-800 space-y-2">
+                        <ul class="list-disc pl-5 space-y-1 opacity-90">
+                            <li>Dark mode support for all screens.</li>
+                            <li>Improved performance on older devices.</li>
+                            <li>Fixed a crash when uploading large files.</li>
+                            <li>New "Favorites" tab for quick access.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Feedback Section -->
+                <section>
+                    <h2 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                        <span class="w-1 h-6 bg-blue-600 rounded-full"></span>
+                        Feedback
+                    </h2>
+                    
+                    <div class="bg-blue-50 rounded-xl p-5 border border-blue-100 mb-4">
+                        <div class="flex items-start gap-3">
+                            <div class="text-blue-500 mt-0.5">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <div>
+                                <p class="text-sm text-blue-900 font-bold mb-1">Help us improve!</p>
+                                <p class="text-xs text-blue-700 leading-relaxed opacity-90">
+                                    This is a beta version. If you encounter any bugs or have suggestions, please let us know directly. Your feedback is valuable to us.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="openModal()" class="w-full py-3 bg-white border border-blue-200 text-blue-600 font-bold rounded-xl hover:bg-blue-50 transition shadow-sm flex items-center justify-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
+                        Send Feedback
+                    </button>
+                </section>
+            </div>
+
+            <!-- Right Column (Sidebar) -->
+            <div class="md:col-span-4 space-y-8 mt-8 md:mt-0">
+                
+                <!-- Desktop Download Button (Sticky?) -->
+                <div class="hidden md:block bg-gray-50 p-6 rounded-2xl border border-gray-100 sticky top-8">
+                    <div class="flex justify-between items-center mb-4">
+                        <div>
+                            <div class="text-sm text-gray-500">Latest Version</div>
+                            <div class="font-bold text-xl text-gray-900">v2.4.0</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-xs text-gray-400">2023-10-27</div>
+                            <div class="text-xs text-gray-400">Build 1024</div>
+                        </div>
+                    </div>
+                    <a href="#" class="block w-full bg-blue-600 text-white hover:bg-blue-700 active:scale-95 font-bold py-4 px-6 rounded-xl shadow-lg transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2 mb-4">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                        Download for iOS
+                    </a>
+                    <p class="text-center text-xs text-gray-400">Requires iOS 14.0 or later</p>
+                </div>
+
+                <!-- History Versions -->
+                <section>
+                    <h2 class="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        History Versions
+                    </h2>
+                    <div class="space-y-3">
+                        <!-- Version Item -->
+                        <div class="group flex items-center justify-between bg-white p-3 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition cursor-pointer">
+                            <div class="flex items-center gap-3">
+                                <div class="bg-gray-100 group-hover:bg-blue-50 group-hover:text-blue-600 transition p-2 rounded-lg text-gray-500">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                                </div>
+                                <div>
+                                    <div class="font-bold text-gray-800 text-sm">v2.3.5</div>
+                                    <div class="text-[10px] text-gray-400">2023-09-15 • Build 1018</div>
+                                </div>
+                            </div>
+                            <div class="text-blue-600 opacity-0 group-hover:opacity-100 transition text-xs font-bold">Get</div>
+                        </div>
+                        <!-- Version Item -->
+                        <div class="group flex items-center justify-between bg-white p-3 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition cursor-pointer">
+                            <div class="flex items-center gap-3">
+                                <div class="bg-gray-100 group-hover:bg-blue-50 group-hover:text-blue-600 transition p-2 rounded-lg text-gray-500">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                                </div>
+                                <div>
+                                    <div class="font-bold text-gray-800 text-sm">v2.3.0</div>
+                                    <div class="text-[10px] text-gray-400">2023-08-20 • Build 1005</div>
+                                </div>
+                            </div>
+                            <div class="text-blue-600 opacity-0 group-hover:opacity-100 transition text-xs font-bold">Get</div>
+                        </div>
+                        <!-- Version Item -->
+                        <div class="group flex items-center justify-between bg-white p-3 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition cursor-pointer">
+                            <div class="flex items-center gap-3">
+                                <div class="bg-gray-100 group-hover:bg-blue-50 group-hover:text-blue-600 transition p-2 rounded-lg text-gray-500">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                                </div>
+                                <div>
+                                    <div class="font-bold text-gray-800 text-sm">v2.2.1</div>
+                                    <div class="text-[10px] text-gray-400">2023-07-10 • Build 980</div>
+                                </div>
+                            </div>
+                            <div class="text-blue-600 opacity-0 group-hover:opacity-100 transition text-xs font-bold">Get</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Footer Info -->
+                <div class="pt-6 border-t border-gray-100 text-center md:text-left pb-10">
+                    <p class="text-gray-400 text-xs">&copy; 2023 PGYER</p>
+                    <p class="text-gray-300 text-[10px] mt-1 mb-6 md:mb-4">All rights reserved. <a href="#" class="hover:text-blue-500">Privacy Policy</a></p>
+                    
+                    <button onclick="openReportModal()" class="inline-flex items-center justify-center gap-1.5 text-xs font-medium text-red-400 hover:text-red-600 transition bg-red-50 md:bg-transparent px-4 py-2 md:p-0 rounded-full md:rounded-none mx-auto md:mx-0">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                        Report Abuse
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Feedback Modal -->
+    <div id="reviewModal" class="fixed inset-0 z-50 hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity opacity-0" id="modalBackdrop"></div>
+        
+        <!-- Modal Panel -->
+        <div class="relative z-10 flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+            <div class="relative transform overflow-hidden rounded-2xl bg-white text-left shadow-xl transition-all w-full sm:my-8 sm:max-w-lg opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" id="modalPanel">
+                
+                <!-- Header -->
+                <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4 border-b border-gray-100">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-lg font-bold leading-6 text-gray-900" id="modal-title">Send Feedback</h3>
+                        <button type="button" onclick="closeModal()" class="text-gray-400 hover:text-gray-500">
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div class="bg-white px-4 py-4 sm:p-6">
+                    <div class="space-y-4">
+                        <!-- Feedback Type -->
+                        <div>
+                            <label for="type" class="block text-sm font-medium text-gray-700 mb-1">Feedback Type</label>
+                            <select id="type" class="w-full rounded-lg border-gray-300 border p-2.5 text-sm focus:border-blue-500 focus:ring-blue-500 outline-none transition bg-white">
+                                <option>Bug Report</option>
+                                <option>Feature Request</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                        <!-- Form -->
+                        <div>
+                            <label for="nickname" class="block text-sm font-medium text-gray-700 mb-1">Your Name (Optional)</label>
+                            <input type="text" id="nickname" class="w-full rounded-lg border-gray-300 border p-2.5 text-sm focus:border-blue-500 focus:ring-blue-500 outline-none transition" placeholder="John Doe">
+                        </div>
+                        
+                        <div>
+                            <label for="review" class="block text-sm font-medium text-gray-700 mb-1">Description</label>
+                            <textarea id="review" rows="4" class="w-full rounded-lg border-gray-300 border p-2.5 text-sm focus:border-blue-500 focus:ring-blue-500 outline-none transition" placeholder="Describe the issue or suggestion..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                    <button type="button" onclick="closeModal()" class="inline-flex w-full justify-center rounded-xl bg-blue-600 px-3 py-2.5 text-sm font-bold text-white shadow-sm hover:bg-blue-500 sm:ml-3 sm:w-auto transition">Submit Feedback</button>
+                    <button type="button" onclick="closeModal()" class="mt-3 inline-flex w-full justify-center rounded-xl bg-white px-3 py-2.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto transition">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Report Modal -->
+    <div id="reportModal" class="fixed inset-0 z-50 hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity opacity-0" id="reportModalBackdrop"></div>
+        
+        <!-- Modal Panel -->
+        <div class="relative z-10 flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+            <div class="relative transform overflow-hidden rounded-2xl bg-white text-left shadow-xl transition-all w-full sm:my-8 sm:max-w-lg opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" id="reportModalPanel">
+                
+                <!-- Header -->
+                <div class="bg-red-50 px-4 pb-4 pt-5 sm:p-6 sm:pb-4 border-b border-red-100">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-lg font-bold leading-6 text-red-900" id="modal-title">Report App</h3>
+                        <button type="button" onclick="closeReportModal()" class="text-red-400 hover:text-red-500">
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div class="bg-white px-4 py-4 sm:p-6">
+                    <div class="space-y-4">
+                        <p class="text-sm text-gray-500">Please describe why you are reporting this app. We take all reports seriously.</p>
+                        
+                        <!-- Reason -->
+                        <div>
+                            <label for="report-reason" class="block text-sm font-medium text-gray-700 mb-1">Reason</label>
+                            <select id="report-reason" class="w-full rounded-lg border-gray-300 border p-2.5 text-sm focus:border-red-500 focus:ring-red-500 outline-none transition bg-white">
+                                <option>Inappropriate Content</option>
+                                <option>Copyright Violation</option>
+                                <option>Malware / Virus</option>
+                                <option>Scam / Fraud</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                        <!-- Description -->
+                        <div>
+                            <label for="report-desc" class="block text-sm font-medium text-gray-700 mb-1">Details</label>
+                            <textarea id="report-desc" rows="4" class="w-full rounded-lg border-gray-300 border p-2.5 text-sm focus:border-red-500 focus:ring-red-500 outline-none transition" placeholder="Please provide more details..."></textarea>
+                        </div>
+                        
+                        <!-- Contact (Optional) -->
+                        <div>
+                            <label for="report-email" class="block text-sm font-medium text-gray-700 mb-1">Email (Optional)</label>
+                            <input type="email" id="report-email" class="w-full rounded-lg border-gray-300 border p-2.5 text-sm focus:border-red-500 focus:ring-red-500 outline-none transition" placeholder="For follow up">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                    <button type="button" onclick="closeReportModal()" class="inline-flex w-full justify-center rounded-xl bg-red-600 px-3 py-2.5 text-sm font-bold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto transition">Submit Report</button>
+                    <button type="button" onclick="closeReportModal()" class="mt-3 inline-flex w-full justify-center rounded-xl bg-white px-3 py-2.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto transition">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Feedback Modal Logic
+        const modal = document.getElementById('reviewModal');
+        const backdrop = document.getElementById('modalBackdrop');
+        const panel = document.getElementById('modalPanel');
+
+        function openModal() {
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                backdrop.classList.remove('opacity-0');
+                panel.classList.remove('opacity-0', 'translate-y-4', 'sm:translate-y-0', 'sm:scale-95');
+            }, 10);
+        }
+
+        function closeModal() {
+            backdrop.classList.add('opacity-0');
+            panel.classList.add('opacity-0', 'translate-y-4', 'sm:translate-y-0', 'sm:scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+        backdrop.addEventListener('click', closeModal);
+
+        // Report Modal Logic
+        const reportModal = document.getElementById('reportModal');
+        const reportBackdrop = document.getElementById('reportModalBackdrop');
+        const reportPanel = document.getElementById('reportModalPanel');
+
+        function openReportModal() {
+            reportModal.classList.remove('hidden');
+            setTimeout(() => {
+                reportBackdrop.classList.remove('opacity-0');
+                reportPanel.classList.remove('opacity-0', 'translate-y-4', 'sm:translate-y-0', 'sm:scale-95');
+            }, 10);
+        }
+
+        function closeReportModal() {
+            reportBackdrop.classList.add('opacity-0');
+            reportPanel.classList.add('opacity-0', 'translate-y-4', 'sm:translate-y-0', 'sm:scale-95');
+            setTimeout(() => {
+                reportModal.classList.add('hidden');
+            }, 300);
+        }
+        reportBackdrop.addEventListener('click', closeReportModal);
+
+        // Close on Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                if (!modal.classList.contains('hidden')) {
+                    closeModal();
+                }
+                if (!reportModal.classList.contains('hidden')) {
+                    closeReportModal();
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
